@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seahorse Marketing Pvt Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f1f5f9;
+      color: #0f172a;
+    }
+
+    /* Hero Banner: Light Navy Blue with Soft Yellow Glow */
+    .partner-banner {
+      width: 100%;
+      max-width: 1060px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #1b355a 0%, #112542 55%, #0a192f 100%);
+      padding: 46px 28px 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 1px solid rgba(254, 240, 138, 0.25);
+      box-shadow: 0 20px 45px -10px rgba(10, 25, 47, 0.45);
+    }
+
+    .partner-banner::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      left: 25%;
+      width: 50%;
+      height: 70%;
+      background: radial-gradient(circle, rgba(200, 178, 14, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .banner-headline {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: capitalize;
+      margin-bottom: 38px;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(7, 18, 36, 0.6);
+      line-height: 1.45;
+      position: relative;
+      z-index: 1;
+      max-width: 840px;
+    }
+
+    .banner-headline span {
+      color: #fef08a;
+      text-shadow: 0 0 16px rgba(254, 240, 138, 0.4);
+    }
+
+    .showcase-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 26px;
+      width: 100%;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 155px;
+    }
+
+    .avatar-ring {
+      width: 138px;
+      height: 138px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 10px 24px rgba(7, 18, 36, 0.45), 0 0 0 2px rgba(254, 240, 138, 0.35);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .service-card:hover .avatar-ring {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(7, 18, 36, 0.55), 0 0 14px rgba(254, 240, 138, 0.6);
+    }
+
+    .avatar-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-pill {
+      background: linear-gradient(180deg, #fef9c3 0%, #fef08a 100%);
+      color: #0a192f;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 7px 15px;
+      border-radius: 20px;
+      letter-spacing: 0.6px;
+      margin-top: -14px;
+      z-index: 2;
+      border: 1.5px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(7, 18, 36, 0.3);
+      white-space: nowrap;
+      text-transform: uppercase;
+      transition: transform 0.2s ease;
+    }
+
+    .service-card:hover .service-pill {
+      transform: scale(1.05);
+    }
+
+    /* Contact Section Pattern Styles (Slate & Clean Card) */
+    .support-outer-slate {
+      background-color: #64748b; /* Slate-500 backdrop */
+    }
+
+    .support-frame {
+      background-color: #f1f5f9; /* Slate-100 inner card */
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.35);
+      border: 1px solid #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      .banner-headline {
+        font-size: 18px;
+        margin-bottom: 26px;
+      }
+      .showcase-grid {
+        gap: 20px;
+      }
+      .avatar-ring {
+        width: 116px;
+        height: 116px;
+      }
+      .service-card {
+        width: 125px;
+      }
+      .service-pill {
+        font-size: 10px;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body class="selection:bg-yellow-400 selection:text-slate-900">
+
+  <!-- TOP UTILITY / CAPTION BAR -->
+  <div class="bg-[#071224] text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2 font-medium">
+        <span class="inline-block w-2 h-2 rounded-full bg-yellow-300 animate-pulse"></span>
+        <span class="text-slate-400">OFFICIAL TAGLINE:</span>
+        <span class="text-white font-bold tracking-wide uppercase">Guiding The Right Path For Securing The Future Risk</span>
+      </div>
+      <div class="flex items-center gap-6 text-slate-300">
+        <a href="tel:03345377580" class="hover:text-yellow-300 transition">📞 033-45377580</a>
+        <a href="mailto:support@seahorse-marketing.com" class="hover:text-yellow-300 transition">✉️ support@seahorse-marketing.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-50 bg-[#0a192f]/95 backdrop-blur-md border-b border-slate-800 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- LOGO (Seahorse Logo Only) -->
+        <a href="#home" class="flex items-center gap-3.5 group">
+          <div class="h-12 w-12 rounded-xl bg-white p-1 flex items-center justify-center border border-yellow-200/40 shadow-sm overflow-hidden group-hover:border-yellow-300 transition duration-300">
+            <img src="./sea.png" alt="Seahorse Marketing Logo" class="h-full w-full object-contain" onerror="this.onerror=null; this.src='sea.PNG';">
+          </div>
+          <div class="flex flex-col">
+            <span class="text-lg font-semibold tracking-tight text-white group-hover:text-yellow-300 transition">
+              Seahorse Marketing Pvt Ltd.
+            </span>
+            <span class="text-[10px] font-semibold tracking-tight text-slate-300 group-hover:text-yellow-200 transition">
+              Building Trust to Secure the Future
+            </span>
+          </div>
+        </a>
+
+        <!-- DESKTOP NAVIGATION -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#home" class="text-sm font-semibold text-slate-200 hover:text-yellow-300 transition">Home</a>
+          <a href="#services" class="text-sm font-semibold text-slate-200 hover:text-yellow-300 transition">Services</a>
+          <a href="#about" class="text-sm font-semibold text-slate-200 hover:text-yellow-300 transition">About Us</a>
+          <a href="#contact" class="text-sm font-semibold text-slate-200 hover:text-yellow-300 transition">Contact Us</a>
+          <a href="#faq" class="text-sm font-semibold text-slate-200 hover:text-yellow-300 transition">FAQ</a>
+        </nav>
+
+        <!-- CTA BUTTON -->
+        <div class="hidden md:flex items-center">
+          <a href="tel:03345377580" class="px-5 py-2.5 rounded-lg bg-yellow-300 hover:bg-yellow-400 text-[#0a192f] text-sm font-extrabold shadow-md shadow-yellow-400/20 transition hover:scale-[1.02]">
+            Call 033-45377580
+          </a>
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button id="mobileMenuBtn" class="md:hidden text-slate-200 hover:text-yellow-300 focus:outline-none p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- MOBILE DROPDOWN -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 py-4 space-y-3">
+        <a href="#home" class="block px-3 py-2 text-base font-semibold text-slate-200 hover:bg-slate-800 rounded">Home</a>
+        <a href="#about" class="block px-3 py-2 text-base font-semibold text-slate-200 hover:bg-slate-800 rounded">About Us</a>
+        <a href="#services" class="block px-3 py-2 text-base font-semibold text-slate-200 hover:bg-slate-800 rounded">Services</a>
+        <a href="#faq" class="block px-3 py-2 text-base font-semibold text-slate-200 hover:bg-slate-800 rounded">FAQ</a>
+        <a href="#contact" class="block px-3 py-2 text-base font-semibold text-slate-200 hover:bg-slate-800 rounded">Contact Us</a>
+        <a href="tel:03345377580" class="block text-center mt-2 px-4 py-2.5 bg-yellow-300 text-[#0a192f] rounded font-extrabold">Call 033-45377580</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. HERO SECTION -->
+  <section id="home" class="py-14 md:py-20 px-4 sm:px-6 flex justify-center items-center bg-gradient-to-b from-[#0a192f] via-[#0d203d] to-[#122b52]">
+    
+    <div class="partner-banner">
+      <h1 class="banner-headline">
+        GUIDING THE RIGHT PATH FOR <span>SECURING THE FUTURE RISK</span>
+      </h1>
+      
+      <div class="showcase-grid">
+        <!-- 1. Life Cover -->
+        <div class="service-card">
+          <div class="avatar-ring">
+            <img src="./Life.png" alt="Life Insurance" onerror="this.onerror=null; this.src='Life.PNG';">
+          </div>
+          <span class="service-pill">Life Cover</span>
+        </div>
+
+        <!-- 2. Health Care -->
+        <div class="service-card">
+          <div class="avatar-ring">
+            <img src="./Health%20Insurance.png" alt="Health Insurance" onerror="this.onerror=null; this.src='Health%20Insurance.PNG';">
+          </div>
+          <span class="service-pill">Health Care</span>
+        </div>
+
+        <!-- 3. Accident Shield -->
+        <div class="service-card">
+          <div class="avatar-ring">
+            <img src="./Acci.png" alt="Accidental Insurance" onerror="this.onerror=null; this.src='Acci.PNG';">
+          </div>
+          <span class="service-pill">Accident Shield</span>
+        </div>
+
+        <!-- 4. Motor Cover -->
+        <div class="service-card">
+          <div class="avatar-ring">
+            <img src="./Car.png" alt="Vehicle Insurance" onerror="this.onerror=null; this.src='Car.PNG';">
+          </div>
+          <span class="service-pill">Motor Cover</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 2. SERVICES SECTION -->
+  <section id="services" class="py-16 md:py-24 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-[#0a192f] uppercase tracking-wider bg-yellow-200/70 px-3 py-1 rounded-full border border-yellow-300">Our Solutions</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-[#0a192f] mt-3 mb-4 tracking-tight">
+          Insurance Coverage Categories
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Strategic insurance solutions tailored to protect what matters most to you and your enterprise.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Life -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-yellow-100 text-2xl flex items-center justify-center mb-4">👨‍👩‍👧</div>
+          <h3 class="text-lg font-bold text-[#0a192f] mb-2">Life Cover</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Ensure comprehensive financial security for your family's future with flexible term and endowment plans.
+          </p>
+        </div>
+
+        <!-- Health -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-yellow-100 text-2xl flex items-center justify-center mb-4">🏥</div>
+          <h3 class="text-lg font-bold text-[#0a192f] mb-2">Health Care</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Protect against medical inflation with cashless hospitalization and extensive critical illness benefits.
+          </p>
+        </div>
+
+        <!-- Accident -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-yellow-100 text-2xl flex items-center justify-center mb-4">🛡️</div>
+          <h3 class="text-lg font-bold text-[#0a192f] mb-2">Accident Shield</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Dedicated accidental disability and injury coverage to cushion unforeseen physical and financial shocks.
+          </p>
+        </div>
+
+        <!-- Motor -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
+          <div class="w-16 h-16 rounded-full bg-yellow-100 text-2xl flex items-center justify-center mb-4">🚗</div>
+          <h3 class="text-lg font-bold text-[#0a192f] mb-2">Motor Cover</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Reliable coverage for private vehicles, commercial transit, and fleet with prompt repair and claim support.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. ABOUT US SECTION -->
+  <section id="about" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-bold text-[#1b355a] uppercase tracking-wider bg-yellow-100 px-3 py-1 rounded-full border border-yellow-200">About Our Company</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-[#0a192f] mt-3 mb-6 tracking-tight">
+            Building Trust to Secure Your Future
+          </h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            At <strong class="text-[#0a192f]">Seahorse Marketing Pvt Ltd</strong>, we assist individuals, families, and commercial entities in identifying, evaluating, and securing suitable insurance policies across Life, Health, Accidental, and Motor segments.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-8">
+            Our commitment is to guide you on the right path with transparent advice, personalized solutions, and dedicated support when filing claims or reviewing renewals.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="border-l-4 border-yellow-400 pl-4 py-1 bg-slate-50 rounded-r-lg">
+              <h4 class="font-bold text-[#0a192f] text-sm">Customer First</h4>
+              <p class="text-xs text-slate-500 mt-1">Independent representation prioritizing your financial safety.</p>
+            </div>
+            <div class="border-l-4 border-yellow-400 pl-4 py-1 bg-slate-50 rounded-r-lg">
+              <h4 class="font-bold text-[#0a192f] text-sm">Claims Support</h4>
+              <p class="text-xs text-slate-500 mt-1">Prompt guidance through documentation and settlements.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPANY BRANDING CARD -->
+        <div class="bg-gradient-to-br from-[#0a192f] to-[#162c50] text-white rounded-2xl border border-yellow-300/30 p-8 flex flex-col items-center text-center shadow-xl">
+          <div class="w-24 h-24 rounded-2xl bg-white shadow-md p-2.5 flex items-center justify-center border border-yellow-200 mb-4">
+            <img src="./sea.png" alt="Seahorse Emblem" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='sea.PNG';">
+          </div>
+          <h3 class="text-xl font-bold text-white">Seahorse Marketing Pvt Ltd</h3>
+          <p class="text-xs text-yellow-300 font-semibold mt-1">Building Trust to Secure the Future</p>
+          <p class="text-xs text-slate-300 max-w-sm mt-3 italic">
+            "Guiding The Right Path For Securing The Future Risk"
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2 justify-center">
+            <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-medium text-yellow-200">Life Cover</span>
+            <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-medium text-yellow-200">Health Care</span>
+            <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-medium text-yellow-200">Accident Shield</span>
+            <span class="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-medium text-yellow-200">Motor Cover</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FAQ SECTION -->
+  <section id="faq" class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold text-[#0a192f] uppercase tracking-wider bg-yellow-100 px-3 py-1 rounded-full border border-yellow-200">Help & Clarity</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-[#0a192f] mt-3 mb-4 tracking-tight">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-slate-600 text-sm">Key details about policy guidance and tie-up support.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left font-semibold text-[#0a192f] flex justify-between items-center hover:bg-slate-50 transition">
+            <span>How does Seahorse Marketing assist with insurance tie-ups?</span>
+            <span class="text-yellow-600 text-xl font-bold">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-4 pt-1 text-sm text-slate-600 border-t border-slate-100 bg-slate-50/50 leading-relaxed">
+            We partner with recognized underwriters and institutions to help you find suitable life, health, motor, and accidental policies with straightforward documentation and transparent pricing.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left font-semibold text-[#0a192f] flex justify-between items-center hover:bg-slate-50 transition">
+            <span>Can I consult before purchasing or renewing a policy?</span>
+            <span class="text-yellow-600 text-xl font-bold">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-4 pt-1 text-sm text-slate-600 border-t border-slate-100 bg-slate-50/50 leading-relaxed">
+            Yes. You can call our helpline at 033-45377580 or submit the contact form below. Our team reviews your existing policies without any consultation obligation.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-4 text-left font-semibold text-[#0a192f] flex justify-between items-center hover:bg-slate-50 transition">
+            <span>What documents are required to initiate coverage?</span>
+            <span class="text-yellow-600 text-xl font-bold">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-4 pt-1 text-sm text-slate-600 border-t border-slate-100 bg-slate-50/50 leading-relaxed">
+            Basic KYC documents (PAN, Identity Proof), address proof, and relevant asset papers (such as RC for motor or previous policy copies for renewals).
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. CONTACT SECTION -->
+<section id="contact" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Outer White Card Container -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-slate-200 shadow-md">
+      
+      <!-- 1. Centered "Contact Us" Header -->
+      <div class="text-center border-b border-slate-200 pb-6 mb-10">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0a192f] tracking-tight">
+          Contact Us
+        </h2>
+      </div>
+
+      <!-- 2-Column Grid (Left: Info & Addresses | Right: Form) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-start">
+        
+        <!-- LEFT COLUMN -->
+        <div class="space-y-6">
+          
+          <!-- Get In Touch Badge -->
+          <div>
+            <span class="inline-block text-xs font-bold text-[#0a192f] uppercase tracking-wider bg-yellow-200/70 px-3.5 py-1.5 rounded-full border border-yellow-300">
+              Get In Touch
+            </span>
+          </div>
+
+          <!-- Description Text -->
+          <p class="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            Have questions regarding Life, Health, Motor, or Accident cover? Leave your requirements below and our team will get back to you shortly.
+          </p>
+
+          <!-- Message Icon -->
+          <div class="w-28 pt-1">
+            <svg viewBox="0 0 280 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto drop-shadow-sm">
+              <!-- Dark Navy Back Bubble -->
+              <rect x="25" y="20" width="240" height="150" rx="36" fill="#1b2a47" />
+              <!-- Bottom Tail -->
+              <path d="M55 170L55 210L108 170Z" fill="#1b2a47" />
+              <!-- Yellow Accent Lines -->
+              <rect x="155" y="70" width="60" height="7" rx="3.5" fill="#fef08a" />
+              <rect x="155" y="100" width="25" height="7" rx="3.5" fill="#fef08a" />
+              <!-- Front Yellow Bubble -->
+              <rect x="10" y="52" width="150" height="98" rx="28" fill="#fcd34d" />
+              <!-- Front Bubble Tail -->
+              <path d="M32 150L32 172L48 150Z" fill="#fcd34d" />
+              <!-- Navy Message Dots -->
+              <circle cx="55" cy="101" r="8" fill="#1b2a47" />
+              <circle cx="85" cy="101" r="8" fill="#1b2a47" />
+              <circle cx="115" cy="101" r="8" fill="#1b2a47" />
+            </svg>
+          </div>
+
+          <!-- Corporate Office (After Message Icon) -->
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
+            <div class="flex items-start gap-3">
+              <span class="text-lg mt-0.5">🏢</span>
+              <div class="text-xs leading-relaxed">
+                <span class="font-bold text-[#0a192f] text-sm block mb-0.5">Corporate Office:</span>
+                <span class="text-slate-600">88A Hazara Main Road, 3rd Floor, Merlin Villa, Kolkata-700026, West Bengal.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Registered Office (After Message Icon) -->
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200/80">
+            <div class="flex items-start gap-3">
+              <span class="text-lg mt-0.5">📍</span>
+              <div class="text-xs leading-relaxed">
+                <span class="font-bold text-[#0a192f] text-sm block mb-0.5">Registered Office:</span>
+                <span class="text-slate-600">114E/1 Selimpur Road, Kolkata-700031, West Bengal.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN (Form Box) -->
+        <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <h3 class="text-xl font-bold text-[#0a192f] mb-5">Your Message</h3>
+
+          <form action="https://formsubmit.co/your-email@example.com" method="POST" class="space-y-4">
+            
+            <input type="hidden" name="_subject" value="New Customer Query - Seahorse Marketing">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" class="hidden" style="display:none">
+
+            <!-- Full Name -->
+            <div>
+              <label for="fullname" class="block text-xs font-semibold text-slate-700 mb-1.5">Full Name</label>
+              <input 
+                type="text" 
+                id="fullname" 
+                name="name" 
+                required 
+                placeholder="Your Name"
+                class="w-full px-3.5 py-2.5 text-sm bg-white border border-slate-300 rounded-lg text-[#0a192f] placeholder-slate-400 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-300/30 transition"
+              >
+            </div>
+
+            <!-- Email Address -->
+            <div>
+              <label for="email" class="block text-xs font-semibold text-slate-700 mb-1.5">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                placeholder="Your Email"
+                class="w-full px-3.5 py-2.5 text-sm bg-white border border-slate-300 rounded-lg text-[#0a192f] placeholder-slate-400 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-300/30 transition"
+              >
+            </div>
+
+            <!-- Subject -->
+            <div>
+              <label for="subject" class="block text-xs font-semibold text-slate-700 mb-1.5">Subject</label>
+              <div class="relative">
+                <select 
+                  id="subject" 
+                  name="subject" 
+                  required
+                  class="w-full px-3.5 py-2.5 text-sm bg-white border border-slate-300 rounded-lg text-[#0a192f] focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-300/30 transition appearance-none cursor-pointer"
+                >
+                  <option value="" disabled selected>Select Subject</option>
+                  <option value="Life Insurance">Life Cover</option>
+                  <option value="Health Insurance">Health Care</option>
+                  <option value="Accident Insurance">Accident Shield</option>
+                  <option value="Motor Insurance">Motor Cover</option>
+                  <option value="Claims Support">Claims Assistance</option>
+                  <option value="General Query">General Query</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+                  <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-xs font-semibold text-slate-700 mb-1.5">Your Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                required 
+                placeholder="Type Here..."
+                class="w-full px-3.5 py-2.5 text-sm bg-white border border-slate-300 rounded-lg text-[#0a192f] placeholder-slate-400 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-300/30 transition resize-y"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="w-full py-3 px-4 bg-yellow-300 hover:bg-yellow-400 text-[#0a192f] font-extrabold text-sm rounded-lg shadow-md shadow-yellow-400/20 transition hover:scale-[1.01] cursor-pointer"
+            >
+              Send Now
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- 6. FOOTER SECTION -->
+  <footer class="bg-[#0a1e38] text-white pt-14 pb-10 border-t border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- TOP GRID (4 COLUMNS + BRANDING) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-slate-700/80">
+        
+        <!-- Left: Seahorse Logo & Company Info (Cols 1-4) -->
+        <div class="md:col-span-4 space-y-4">
+          
+          <div class="inline-flex items-center bg-white px-4 py-2.5 rounded-xl shadow-md border border-slate-200">
+            <img src="./sea.png" alt="Seahorse Marketing" class="h-10 w-auto max-w-[130px] object-contain" onerror="this.onerror=null; this.src='sea.PNG';">
+          </div>
+
+          <p class="text-xs text-slate-300 leading-relaxed max-w-sm pt-1">
+            Insurance advice that actually puts you first. Pan-India, IRDAI-certified, human-first since 2007.
+          </p>
+
+          <div class="text-[11.5px] text-slate-300 space-y-0.5 leading-relaxed">
+            <p><strong class="text-white">Powered by Seahorse Marketing Pvt Ltd.</strong></p>
+            <p>• IRDAI Reg. No. IRDA/------</p>
+            <p>• Valid through ---------</p>
+          </div>
+
+          <div class="flex items-start gap-2 text-[11.5px] text-slate-300 pt-1 max-w-sm">
+            <span class="text-yellow-300 mt-0.5">📍</span>
+            <span>Seahorse Marketing Pvt Ltd. <br>
+            88A Hazra Main Road Merlin Villa 3rd Floor <br>Kolkata-700026</span>
+          </div>
+
+          <!-- Social Media Round Icon Buttons -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-full border border-slate-500/60 bg-[#0e274a] flex items-center justify-center text-slate-200 hover:text-yellow-300 hover:border-yellow-300 transition text-xs">
+              f
+            </a>
+            <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full border border-slate-500/60 bg-[#0e274a] flex items-center justify-center text-slate-200 hover:text-yellow-300 hover:border-yellow-300 transition text-xs">
+              📷
+            </a>
+            <a href="#" aria-label="LinkedIn" class="w-8 h-8 rounded-full border border-slate-500/60 bg-[#0e274a] flex items-center justify-center text-slate-200 hover:text-yellow-300 hover:border-yellow-300 transition text-xs">
+              in
+            </a>
+            <a href="#" aria-label="YouTube" class="w-8 h-8 rounded-full border border-slate-500/60 bg-[#0e274a] flex items-center justify-center text-slate-200 hover:text-yellow-300 hover:border-yellow-300 transition text-xs">
+              ▶
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Col 1: PRODUCTS (Cols 5-6) -->
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-yellow-300">PRODUCTS</h4>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li><a href="#services" class="hover:text-yellow-300 transition">Life Cover</a></li>
+            <li><a href="#services" class="hover:text-yellow-300 transition">Health Care</a></li>
+            <li><a href="#services" class="hover:text-yellow-300 transition">Accident Shield</a></li>
+            <li><a href="#services" class="hover:text-yellow-300 transition">Motor Insurance</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: SUPPORT (Cols 7-8) -->
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-yellow-300">SUPPORT</h4>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li><a href="#contact" class="hover:text-yellow-300 transition">Claim assistance</a></li>
+            <li><a href="#contact" class="hover:text-yellow-300 transition">Renew a policy</a></li>
+            <li><a href="#faq" class="hover:text-yellow-300 transition">Calculators</a></li>
+            <li><a href="#contact" class="hover:text-yellow-300 transition">Grievance redressal</a></li>
+            <li><a href="#contact" class="hover:text-yellow-300 transition">Contact us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: COMPANY (Cols 9-10) -->
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-yellow-300">COMPANY</h4>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li><a href="#about" class="hover:text-yellow-300 transition">Careers</a></li>
+            <li><a href="#about" class="hover:text-yellow-300 transition">Partnerships</a></li>
+            <li><a href="#about" class="hover:text-yellow-300 transition">Regulatory Disclosures</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: TALK TO US (Cols 11-12) -->
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-yellow-300">TALK TO US</h4>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li><a href="tel:03345377580" class="hover:text-yellow-300 transition font-semibold text-white">033-45377580</a></li>
+            <li><a href="https://wa.me/917604065307" class="hover:text-yellow-300 transition">WhatsApp us</a></li>
+            <li><a href="mailto:support@seahorse-marketing.com" class="hover:text-yellow-300 transition">support@seahorse-marketing.com</a></li>
+            <li><a href="#contact" class="hover:text-yellow-300 transition">Find a branch</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM ROW: COPYRIGHT & LEGAL DISCLAIMERS -->
+      <div class="pt-6 space-y-4">
+        
+        <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-300 gap-3">
+          <p>© Copyright 2016-2026 Seahorse-Marketing Pvt Ltd. All Rights Reserved.</p>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-yellow-300 transition">Privacy</a>
+            <a href="#" class="hover:text-yellow-300 transition">Terms</a>
+          </div>
+        </div>
+
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          Insurance is the subject matter of solicitation. Visitors are advised to read the sales brochure, policy wordings and benefit illustrations carefully before concluding a sale. IRDAI does not involve in the activities of selling insurance, announcing bonus or investment of premium. Public receiving such calls are requested to lodge a complaint on sancharsaathi.gov.in or the Cybercrime helpline 1930.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/917604065307" target="_blank" aria-label="WhatsApp Us" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-105 transition shadow-emerald-500/40">
+      <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.983.538 1.834.814 2.79.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.767-5.766zm3.387 8.188c-.14.394-.809.742-1.127.788-.316.046-.723.076-2.073-.483-1.62-.67-2.65-2.316-2.73-2.423-.081-.107-.655-.87-.655-1.657 0-.787.412-1.173.559-1.332.147-.159.323-.199.431-.199.108 0 .216.002.31.007.1.005.234-.038.366.279.137.33.468 1.144.509 1.228.041.084.068.182.014.29-.055.107-.082.175-.164.271-.082.096-.172.215-.246.288-.082.081-.168.17-.072.335.096.165.426.703.914 1.137.629.56 1.159.734 1.324.815.165.082.262.069.359-.042.097-.111.413-.482.524-.648.11-.165.221-.138.373-.082.152.055.967.456 1.133.539.166.083.276.124.317.194.041.069.041.401-.099.795z"/>
+      </svg>
+    </a>
+  </footer>
+
+  <!-- JAVASCRIPT FOR ACCORDION & MOBILE MENU -->
+  <script>
+    // Mobile navigation toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // FAQ Accordion Toggle
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('span:last-child');
+        const isHidden = content.classList.contains('hidden');
+        
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-btn span:last-child').forEach(i => i.textContent = '+');
+
+        if (isHidden) {
+          content.classList.remove('hidden');
+          icon.textContent = '−';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
